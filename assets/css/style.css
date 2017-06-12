@@ -17,3 +17,15 @@ input[type=text] {
 .hideable {
 	display: none;
 }
+
+body {
+	background-image: url('../../assets/images/DerTrain_Large.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.fa-close {
+	cursor: pointer;
+}
