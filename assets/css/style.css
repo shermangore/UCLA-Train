@@ -1,0 +1,19 @@
+.panel-body {
+    padding-left: 30px;
+}
+
+.row {
+	margin-top: 15px;
+}
+
+p {
+	margin-bottom: 0;
+}
+
+input[type=text] {
+	width: 99%;
+}
+
+.hideable {
+	display: none;
+}
