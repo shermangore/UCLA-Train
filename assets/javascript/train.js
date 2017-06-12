@@ -100,7 +100,8 @@ database.ref("/trains").on("value", function(snap) {
       let minutesAway = trainFrequency - ((currentMinutes - startUnixMinutes) % trainFrequency);
 
       // What time will the train arrive?
-      let nextArrival = currentDate.getHours() >= 12 ? (currentDate.getHours() - 12) + ":" + (currentDate.getMinutes() + minutesAway) + " PM" : currentDate.getHours() + ":" + (currentDate.getMinutes() + minutesAway + " AM");
+      //let nextArrival = currentDate.getHours() >= 12 ? (currentDate.getHours() - 12) + ":" + (currentDate.getMinutes() + minutesAway) + " PM" : currentDate.getHours() + ":" + (currentDate.getMinutes() + minutesAway + " AM");
+      let nextArrival = moment(currentDate).add(minutesAway, 'minutes').format("LT");
 
       // Create an html string to populate the table with schedule values
       let rowString = `<tr><td>${childSnap.val().TrainName}</td><td>${childSnap.val().Destination}</td><td>${childSnap.val().Frequency}</td><td>${nextArrival}</td><td>${minutesAway}</td></tr>`;
