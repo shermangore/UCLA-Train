@@ -93,8 +93,8 @@ database.ref("/trains").on("value", function(snap) {
       startDate.setSeconds(00); // Set the seconds to zero for easier calculations
 
       // Get the number of minutes since 01/01/1970
-      let currentMinutes = moment(currentDate).unix() * 60;
-      let startUnixMinutes = moment(startDate).unix() * 60;
+      let currentMinutes = moment(currentDate).unix() / 60;
+      let startUnixMinutes = moment(startDate).unix() / 60;
 
       // How many minutes away is the train?
       let minutesAway = trainFrequency - ((currentMinutes - startUnixMinutes) % trainFrequency);
